@@ -1,0 +1,5 @@
+{
+  "editor.formatOnSave": true,
+  "reason.codelens.enabled": true,
+  "reason.diagnostics.tools": ["merlin"]
+}

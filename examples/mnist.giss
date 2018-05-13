@@ -1,0 +1,41 @@
+hyperparameters {
+  batchSize 128
+  epochs 20
+  numClasses 10
+}
+
+mnist dataset {
+}
+
+sequential model {
+  # input layer
+  dense {
+    inputDim 784 # 28x28
+    units 512
+    activation relu
+  }
+  dropout {
+    rate 0.2
+  }
+
+  # hidden layer
+  dense {
+    units 512
+    activation relu
+  }
+  dropout {
+    rate 0.2
+  }
+
+  # output layer
+  dense {
+    units $numClasses # 0..9
+    activation softmax
+  }
+}
+
+train {
+  loss categoricalCrossentropy
+  optimizer rmsprop
+  metrics [accuracy]
+}
